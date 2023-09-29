@@ -3,12 +3,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import 'source-map-support/register';
-import * as cdk from '@aws-cdk/core';
+import {App } from 'aws-cdk-lib';
 import { AwsIotRpiFleetProvisioningStack } from '../lib/aws-iot-rpi-fleet-provisioning-stack';
-
 import { CONFIG } from '../lib/utils/constants';
 
-const app = new cdk.App();
+const app = new App();
 new AwsIotRpiFleetProvisioningStack(app, 'AwsIotRpiFleetProvisioningStack', {
     wifiPasswordSecretName: CONFIG.wifiPasswordSecretName,
     sshPublicKey: CONFIG.sshPublicKey,
